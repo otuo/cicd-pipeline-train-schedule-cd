@@ -8,13 +8,8 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                sh './gradlew build --no-daemon'
+                sh 'ls -al'
             }   
         }
-        stage ('Post Build') {
-            steps {
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        } 
     }
 }
